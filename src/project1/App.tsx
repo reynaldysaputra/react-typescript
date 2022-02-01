@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './app.css';
+import InputFields from './components/inputFields';
+import TodoList from './components/todoList';
+import { Todo } from './models';
 
 let name: string;
 let age: number | string; // union type
@@ -30,7 +34,7 @@ type typeB = typeA & {
   d: string
 }
 
-let someData: typeB = {
+let someData: typeB  = {
   a: '1',
   b: 25,
   c: true,
@@ -46,10 +50,33 @@ let persons: person = {
 
 let unknownType: unknown; // Better than any type
 
-function App() {
+const App:React.FC = () => {
+  const [todo, setTodo] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if(todo){
+      setTodos([
+        ...todos,
+        {
+          id: Date.now(),
+          todos: todo,
+          isDone: false
+        }
+      ])
+      setTodo("");
+    }
+  }
+
   return (
     <div className="App">
-      Hello word      
+      <div className="heading">
+        Taskify  
+      </div>     
+      <InputFields todo={todo} setTodo={setTodo} handleAdd={handleAdd} /> 
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

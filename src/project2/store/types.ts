@@ -13,12 +13,12 @@ export interface Weather {
 export interface WeatherData {
   base: string;
   clouds: {
-    all: number
+    all: number;
   };
   cod: number;
   coord: {
     lon: number;
-    lat: number
+    lat: number;
   };
   dt: number;
   id: number;
@@ -28,22 +28,22 @@ export interface WeatherData {
     pressure: number;
     temp: number;
     temp_max: number;
-    temp_min: number
+    temp_min: number;
   };
   name: string;
   sys: {
-    coutry: string;
+    country: string;
     id: number;
     sunrise: number;
     sunset: number;
-    type: number
+    type: number;
   };
   timezone: number;
   visibility: number;
   weather: Weather[];
   wind: {
     speed: number;
-    seg: number
+    deg: number;
   };
 }
 
@@ -58,23 +58,23 @@ export interface WeatherState {
   error: string;
 }
 
-interface  GetWeatherActions {
+interface GetWeatherAction {
   type: typeof GET_WEATHER;
-  payload: WeatherData
+  payload: WeatherData;
 }
 
-interface SetLoadingError {
-  type: typeof SET_LOADING
+interface SetLoadingAction {
+  type: typeof SET_LOADING;
 }
 
 interface SetErrorAction {
   type: typeof SET_ERROR;
-  payload: string
+  payload: string;
 }
 
-export type WeatherAction = GetWeatherActions | SetLoadingError | SetErrorAction;
+export type WeatherAction = GetWeatherAction | SetLoadingAction | SetErrorAction;
 
-export interface AlertActions {
+export interface AlertAction {
   type: typeof SET_ALERT;
   payload: string;
 }

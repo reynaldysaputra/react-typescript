@@ -1,7 +1,8 @@
 import React, {FC, FormEvent, useState} from 'react';
 import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { setAlert } from '../store/actions/alertActions';
-import { getWeather, setLoading } from '../store/actions/weatherActions';
+import {actionCreators} from '../store/actions';
 
 interface SearchProps {
   title: string;
@@ -10,6 +11,7 @@ interface SearchProps {
 const Search: FC<SearchProps> = ({ title }) => {
   const dispatch = useDispatch();
   const [city, setCity] = useState<string>("");
+  const { setLoading, getWeather } = bindActionCreators(actionCreators, dispatch)
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,8 +20,8 @@ const Search: FC<SearchProps> = ({ title }) => {
       return dispatch(setAlert('City is required!'));
     }
 
-    dispatch(setLoading());
-    dispatch(getWeather(city));
+    setLoading();
+    getWeather(city);
     setCity('');
   }
 

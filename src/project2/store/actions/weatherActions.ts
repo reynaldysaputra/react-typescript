@@ -13,7 +13,7 @@ export const getWeather = (city: string): ThunkAction<void, null, RootState, Wea
         throw new Error(resData.message);
       }
 
-      const restData: WeatherData = await res.json();
+      const restData: WeatherData = await res.json(); 
       dispatch({
         type: GET_WEATHER,
         payload: restData

@@ -1,0 +1,6 @@
+{
+  "posts": [
+    { "id": 1, "name": "Reynaldy", "age": 14 },
+    { "id": 2, "name": "Bagus", "age": 17 }
+  ]
+}

@@ -1,6 +1,25 @@
 {
   "posts": [
-    { "id": 1, "name": "Reynaldy", "age": 14 },
-    { "id": 2, "name": "Bagus", "age": 17 }
+    {
+      "id": 1,
+      "name": "Reynaldy",
+      "age": 14
+    },
+    {
+      "id": 2,
+      "name": "Bagus",
+      "age": 17
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 41,
+      "name": "dddd",
+      "age": 40
+    },
+    {
+      "id": 42
+    }
   ]
 }

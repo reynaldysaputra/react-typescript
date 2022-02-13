@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import {useQuery, UseQueryResult} from 'react-query';
+import CreatePage from '../../components/create';
 import { IPerson } from '../../lib/interfaces/IPerson';
 
-const fetchPerson = async (): Promise<IPerson[]> => {
+export const fetchPerson = async (): Promise<IPerson[]> => {
   const res = await fetch('http://localhost:4000/posts');
   return res.json();
 }
@@ -37,7 +38,9 @@ const PagePerson: FC = () => {
   return(
     <div>
       <i>Hello word</i>
-      <ListPerson listPerson={data} />
+      <CreatePage/>
+      {console.log(data)}
+      {/* <ListPerson listPerson={data} /> */}
     </div>
   )
 }

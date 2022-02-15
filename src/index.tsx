@@ -8,6 +8,7 @@ import ProjectFour from './project4/app';
 import PagePersonDetail from './project4/pages/person/pagePersonDetail';
 import {QueryClientProvider, QueryClient} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
+import ProjectFive from './project5(shopping-cart)/app';
 
 const queryClient = new QueryClient();
 
@@ -20,8 +21,9 @@ ReactDOM.render(
           <Route path='/project2' element={<ProjectTwo/>} />
           <Route path='/project3' element={<ProjectThree/>} />
 
-            <Route path='/project4' element={<ProjectFour/>}/>
-            <Route path='/project4/:id' element={<PagePersonDetail/>} />
+          <Route path='/project4' element={<ProjectFour/>}/>
+          <Route path='/project4/:id' element={<PagePersonDetail/>} />
+          <Route path='/project5' element={<ProjectFive/>}/>
           </Routes>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>

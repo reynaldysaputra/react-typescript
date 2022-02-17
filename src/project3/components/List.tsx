@@ -8,7 +8,7 @@ const List: React.FC<IState> = ({people}) => {
       {people.map(person => (
         <li key={person.img} className={styles.List}>
           <div className={styles.ListHeader}>
-            <img src={person.img} className={styles.ListImg} />
+            <img src={person.img} className={styles.ListImg} alt='persons' />
             <h2>{person.name}</h2>
           </div>
           <p>{person.age}</p>

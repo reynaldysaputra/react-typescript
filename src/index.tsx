@@ -9,6 +9,7 @@ import PagePersonDetail from './project4/pages/person/pagePersonDetail';
 import {QueryClientProvider, QueryClient} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 import ProjectFive from './project5(shopping-cart)/app';
+import AppQuiz from './project7(quiz)/app';
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,8 @@ ReactDOM.render(
           <Route path='/project4' element={<ProjectFour/>}/>
           <Route path='/project4/:id' element={<PagePersonDetail/>} />
           <Route path='/project5' element={<ProjectFive/>}/>
-          </Routes>
+          <Route path='/project7' element={<AppQuiz/>}/>
+        </Routes>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
     </BrowserRouter>

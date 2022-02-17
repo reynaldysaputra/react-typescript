@@ -32,6 +32,7 @@ const QuestionCard: FC<Props> = ({
             correct={userAnswer?.correctAnswer === answer}
             userClicked={userAnswer?.answer === answer}
           >
+            {console.log(answer)}
             <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
               <span dangerouslySetInnerHTML={{ __html: answer }} />
             </button>

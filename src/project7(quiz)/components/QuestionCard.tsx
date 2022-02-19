@@ -1,12 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { Wrapper } from '../../project5(shopping-cart)/App.styles';
+import { AnswerObject } from '../app';
 import { ButtonWrapper } from './QuestionCard.styles';
 
 type Props = {
   question: string;
   answers: string[];
-  callback: any;
-  userAnswer: any;
+  callback: (e: MouseEvent<HTMLButtonElement>) => void;
+  userAnswer: AnswerObject | undefined;
   questionNumber: number;
   totalQuestion: number;
 }
@@ -32,7 +33,6 @@ const QuestionCard: FC<Props> = ({
             correct={userAnswer?.correctAnswer === answer}
             userClicked={userAnswer?.answer === answer}
           >
-            {console.log(answer)}
             <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
               <span dangerouslySetInnerHTML={{ __html: answer }} />
             </button>

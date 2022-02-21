@@ -8,7 +8,6 @@ function AppPiano(params: any) {
     audio.play();
   };
 
-
   return(
     <div>
       <Octave notes={notes} clickHandler={handleClick} />

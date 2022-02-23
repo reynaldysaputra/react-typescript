@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: center / cover url("./img/calendar_backdrop.jpg");
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
   }
 `;
 

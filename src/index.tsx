@@ -12,6 +12,7 @@ import ProjectFive from './project5(shopping-cart)/app';
 import AppQuiz from './project7(quiz)/app';
 import AppPiano from './project8(piano)/app';
 import ProjectCalendar from './project9(calendar)/app';
+import Project10 from './project10(codevolutionBasic)/app';
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ ReactDOM.render(
           <Route path='/project7' element={<AppQuiz/>}/>
           <Route path='/project8' element={<AppPiano/>}/>
           <Route path='/project9' element={<ProjectCalendar/>}/>
+          <Route path='/project10' element={<Project10/>}/>
         </Routes>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>

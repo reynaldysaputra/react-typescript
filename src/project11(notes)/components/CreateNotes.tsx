@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button'
 import { Note } from '../app';
 import { Alert, Form } from 'react-bootstrap';

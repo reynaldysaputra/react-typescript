@@ -15,6 +15,9 @@ import ProjectCalendar from './project9(calendar)/app';
 import Project10 from './project10(codevolutionBasic)/app';
 import NotesApps from './project11(notes)/app';
 import {App12} from './project12(task list)/index';
+import Project13 from './project13(contactApp)';
+import AddPost from './project13(contactApp)/pages/addPost';
+import EditContact from './project13(contactApp)/pages/editContact';
 
 const queryClient = new QueryClient();
 
@@ -36,6 +39,11 @@ ReactDOM.render(
           <Route path='/project10' element={<Project10/>}/>
           <Route path='/project11' element={<NotesApps/>}/>
           <Route path='/project12' element={<App12/>}/>
+          <Route path="/project13">
+            <Route index={true} element={<Project13/>}/>
+            <Route path='add' element={<AddPost/>} />
+            <Route path='edit/:id' element={<EditContact/>} />
+          </Route>
         </Routes>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>

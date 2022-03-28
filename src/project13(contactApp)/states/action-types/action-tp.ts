@@ -1,5 +1,5 @@
-export const ADD_EXPENSE = "ADD_EXPENSE";
+export const ADD_CONTACT = "ADD_CONTACT";
 
-export const DELETE_EXPENSE = "DELETE_EXPENSE";
+export const DELETE_CONTACT = "DELETE_CONTACT";
 
-export const SEARCH_EXPENSE = "SEARCH_EXPENSE";
+export const EDIT_CONTACT = "EDIT_CONTACT";

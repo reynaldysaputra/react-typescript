@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { expensesReducer } from './reducers/expenses';
+import { contactReducer } from './reducers/contact';
 
 const rootReducers = combineReducers({
-  expenses: expensesReducer
+  contact: contactReducer
 })
 
 const AppStore13 = createStore(

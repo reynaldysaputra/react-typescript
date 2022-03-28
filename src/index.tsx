@@ -18,6 +18,8 @@ import {App12} from './project12(task list)/index';
 import Project13 from './project13(contactApp)';
 import AddPost from './project13(contactApp)/pages/addPost';
 import EditContact from './project13(contactApp)/pages/editContact';
+import { Provider } from 'react-redux';
+import AppStore13 from './project13(contactApp)/states/store';
 
 const queryClient = new QueryClient();
 
@@ -25,26 +27,28 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <Routes>
-          <Route path='/' element={<App/>} />
-          <Route path='/project2' element={<ProjectTwo/>} />
-          <Route path='/project3' element={<ProjectThree/>} />
+        <Provider store={AppStore13}>
+          <Routes>
+            <Route path='/' element={<App/>} />
+            <Route path='/project2' element={<ProjectTwo/>} />
+            <Route path='/project3' element={<ProjectThree/>} />
 
-          <Route path='/project4' element={<ProjectFour/>}/>
-          <Route path='/project4/:id' element={<PagePersonDetail/>} />
-          <Route path='/project5' element={<ProjectFive/>}/>
-          <Route path='/project7' element={<AppQuiz/>}/>
-          <Route path='/project8' element={<AppPiano/>}/>
-          <Route path='/project9' element={<ProjectCalendar/>}/>
-          <Route path='/project10' element={<Project10/>}/>
-          <Route path='/project11' element={<NotesApps/>}/>
-          <Route path='/project12' element={<App12/>}/>
-          <Route path="/project13">
-            <Route index={true} element={<Project13/>}/>
-            <Route path='add' element={<AddPost/>} />
-            <Route path='edit/:id' element={<EditContact/>} />
-          </Route>
-        </Routes>
+            <Route path='/project4' element={<ProjectFour/>}/>
+            <Route path='/project4/:id' element={<PagePersonDetail/>} />
+            <Route path='/project5' element={<ProjectFive/>}/>
+            <Route path='/project7' element={<AppQuiz/>}/>
+            <Route path='/project8' element={<AppPiano/>}/>
+            <Route path='/project9' element={<ProjectCalendar/>}/>
+            <Route path='/project10' element={<Project10/>}/>
+            <Route path='/project11' element={<NotesApps/>}/>
+            <Route path='/project12' element={<App12/>}/>
+            <Route path="/project13">
+              <Route index={true} element={<Project13/>}/>
+              <Route path='add' element={<AddPost/>} />
+              <Route path='edit/:id' element={<EditContact/>} />
+            </Route>
+          </Routes>
+        </Provider>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
     </BrowserRouter>

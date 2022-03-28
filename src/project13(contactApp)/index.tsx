@@ -1,17 +1,18 @@
 import * as React from 'react';
-import { Provider } from 'react-redux';
 import Apps13 from './app';
-import AppStore13 from './states/store';
-import 'react-toastify/dist/ReactToastify.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 interface IProject13Props {
 }
 
 const Project13: React.FunctionComponent<IProject13Props> = (props) => {
   return(
-    <Provider store={AppStore13}>
+    <>
+      <ToastContainer/>
       <Apps13/>
-    </Provider>
+    </>
   )
 };
 

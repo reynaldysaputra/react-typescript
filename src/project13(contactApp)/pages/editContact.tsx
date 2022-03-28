@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface IEditContactProps {
 }
 
 const EditContact: React.FunctionComponent<IEditContactProps> = (props) => {
   const navigate = useNavigate();
+  const {id} = useParams();
 
   return(
     <div className="container">

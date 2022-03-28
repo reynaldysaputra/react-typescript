@@ -1,11 +1,15 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RootState } from '../states/store';
 
 interface IHomeProps {
 
 }
 
 const Home: React.FunctionComponent<IHomeProps> = (props) => {
+  const {dataContact} = useSelector((state: RootState) => state.contact);
+
   return(
     <div className="container">
       <div className="row d-flex flex-column">
@@ -24,17 +28,16 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
               </tr>
             </thead>
             <tbody>
-              {/* {contacts.length > 0 ? (
-                contacts.map((contact, id) => ( */}
+              {dataContact.length > 0 ? (
+                dataContact.map((contact, id) => (
                   <tr key={2}>
-                    <td>3</td>
-                    <td>Reynaldy Saputra</td>
-                    <td>renalfrontend@gmail.com</td>
-                    <td>089607266532</td>
+                    <td>{contact.id}</td>
+                    <td>{contact.name}</td>
+                    <td>{contact.email}</td>
+                    <td>{contact.phone}</td>
                     <td>
                       <Link
-                        // to={`/edit/${contact.id}`}
-                        to={'/project13/edit/2'}
+                        to={`/project13/edit/${contact.id}`}
                         className="btn btn-sm btn-primary mr-1"
                       >
                         Edit
@@ -48,12 +51,12 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
                       </button>
                     </td>
                   </tr>
-                {/* ))
+                ))
               ) : (
                 <tr>
                   <th>No contacts found</th>
                 </tr>
-              )} */}
+              )}
             </tbody>
           </table>
         </div>

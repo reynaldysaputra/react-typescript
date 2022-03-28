@@ -3,6 +3,7 @@ import { ADD_CONTACT, DELETE_CONTACT, EDIT_CONTACT } from "./action-types/action
 export interface ContactDataType {
   contactList: {
     id: string;
+    name: string;
     email: string;
     phone: string
   };

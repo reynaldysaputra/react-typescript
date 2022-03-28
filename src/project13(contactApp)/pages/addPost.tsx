@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Navbar from '../components/navbar';
 import { AddContact } from '../states/actions/contact';
@@ -14,6 +15,7 @@ const AddPost: React.FunctionComponent<IAddPostProps> = (props) => {
   const [name, setName] = React.useState("");
   const {dataContact} = useSelector((state: RootState) => state.contact);
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,9 +36,13 @@ const AddPost: React.FunctionComponent<IAddPostProps> = (props) => {
 
     dispatch(AddContact({
       id: new Date().getTime().toLocaleString(),
+      name,
       email,
       phone
     }))
+
+    navigate('/project13');
+    alert("Contact added successfully!!");
 }
 
   return(

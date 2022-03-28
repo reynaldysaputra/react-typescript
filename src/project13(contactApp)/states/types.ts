@@ -20,12 +20,12 @@ export interface AddContact {
 
 export interface EditContact {
   type: typeof EDIT_CONTACT;
-  payload: ContactDataType
+  payload: ContactDataType["contactList"];
 }
 
 export interface DeleteContact {
   type: typeof DELETE_CONTACT;
-  payload: number
+  payload: string
 }
 
 export type ContactActions = AddContact | EditContact | DeleteContact;

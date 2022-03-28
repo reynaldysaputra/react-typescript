@@ -17,7 +17,7 @@ import NotesApps from './project11(notes)/app';
 import {App12} from './project12(task list)/index';
 import Project13 from './project13(contactApp)';
 import AddPost from './project13(contactApp)/pages/addPost';
-import EditContact from './project13(contactApp)/pages/editContact';
+import EditContactPage from './project13(contactApp)/pages/editContact';
 import { Provider } from 'react-redux';
 import AppStore13 from './project13(contactApp)/states/store';
 
@@ -45,7 +45,7 @@ ReactDOM.render(
             <Route path="/project13">
               <Route index={true} element={<Project13/>}/>
               <Route path='add' element={<AddPost/>} />
-              <Route path='edit/:id' element={<EditContact/>} />
+              <Route path='edit/:id' element={<EditContactPage/>} />
             </Route>
           </Routes>
         </Provider>

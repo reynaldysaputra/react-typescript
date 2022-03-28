@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { DeleteContact } from '../states/actions/contact';
 import { RootState } from '../states/store';
 
 interface IHomeProps {
@@ -9,6 +10,7 @@ interface IHomeProps {
 
 const Home: React.FunctionComponent<IHomeProps> = (props) => {
   const {dataContact} = useSelector((state: RootState) => state.contact);
+  const dispatch = useDispatch();
 
   return(
     <div className="container">
@@ -44,7 +46,10 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
                       </Link>
                       <button
                         type="button"
-                        // onClick={() => deleteContact(contact.id)}
+                        onClick={() => {
+                          dispatch(DeleteContact(contact.id))
+                          alert("Contact deleted successfully!");
+                        }}
                         className="btn btn-sm btn-danger"
                       >
                         Delete

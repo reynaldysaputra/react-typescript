@@ -13,7 +13,10 @@ const initialStateContact: IContactType = {
 export const contactReducer = (state= initialStateContact, action: ContactActions) => {
   switch(action.type){
     case ADD_CONTACT:
-      return [...state.dataContact, action.payload];
+      return {
+        ...state,
+        dataContact: [...state.dataContact, action.payload]
+      }
     default:
       return state;
   } 

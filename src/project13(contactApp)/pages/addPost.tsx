@@ -18,19 +18,19 @@ const AddPost: React.FunctionComponent<IAddPostProps> = (props) => {
   const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // const checkEmail = dataContact.find(contact => contact.email === email && email);
-    // const checkPhone = dataContact.find(contact => contact.phone === phone && phone);
+    const checkEmail = dataContact.find(contact => contact.email === email && email);
+    const checkPhone = dataContact.find(contact => contact.phone === phone && phone);
 
     if(!email || !phone || !name){
       return alert("Please fill in all fields!");
     }
 
-    // if(checkEmail) {
-    //   return alert("This email already exists!!");
-    // }
-    // if(checkPhone) {      
-    //   return alert("This phone number already exists!!");
-    // }
+    if(checkEmail) {
+      return alert("This email already exists!!");
+    }
+    if(checkPhone) {      
+      return alert("This phone number already exists!!");
+    }
 
     dispatch(AddContact({
       id: new Date().getTime().toLocaleString(),

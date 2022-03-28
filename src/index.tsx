@@ -30,7 +30,7 @@ ReactDOM.render(
         <Provider store={AppStore13}>
           <Routes>
             <Route path='/' element={<App/>} />
-            <Route path='/project2' element={<ProjectTwo/>} />
+            {/* <Route path='/project2' element={<ProjectTwo/>} /> */}
             <Route path='/project3' element={<ProjectThree/>} />
 
             <Route path='/project4' element={<ProjectFour/>}/>
@@ -41,7 +41,7 @@ ReactDOM.render(
             <Route path='/project9' element={<ProjectCalendar/>}/>
             <Route path='/project10' element={<Project10/>}/>
             <Route path='/project11' element={<NotesApps/>}/>
-            <Route path='/project12' element={<App12/>}/>
+            {/* <Route path='/project12' element={<App12/>}/> */}
             <Route path="/project13">
               <Route index={true} element={<Project13/>}/>
               <Route path='add' element={<AddPost/>} />
